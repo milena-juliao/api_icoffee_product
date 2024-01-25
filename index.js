@@ -19,6 +19,10 @@ const Product = mongoose.model('Product', {
 })
 
 //List products
+app.get("/", async (req, res) => {
+    return res.json("hello world");
+})
+
 app.get("/products", async (req, res) => {
     const products = await Product.find()
     return res.send(products)
