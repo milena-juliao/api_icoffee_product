@@ -83,6 +83,6 @@ app.delete("/:id", async (req, res) => {
 })
 
 app.listen(port, () => {
-    mongoose.connect(process.env.mongodb_connection_product)
+    mongoose.connect(process.env.MONGODB_URI)
     console.log("API running")
 })
