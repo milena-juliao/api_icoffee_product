@@ -25,7 +25,7 @@ app.get("/", async (req, res) => {
 
 app.get("/teste", async (req, res) => {
     return res.json("está tudo certo.");
-})
+})//remover após terminar os testes.
 
 app.get("/products", async (req, res) => {
     try{
