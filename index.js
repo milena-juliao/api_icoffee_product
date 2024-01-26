@@ -6,7 +6,7 @@ const mongoose = require('mongoose')
 const app = new express()
 app.use(express.json())
 
-const port = process.env.port
+const port = process.env.port || 3002
 
 //Model
 const Product = mongoose.model('Product', {
@@ -78,6 +78,6 @@ app.delete("/:id", async (req, res) => {
 })
 
 app.listen(port, () => {
-    mongoose.connect(process.env.MONGODB_URI)
+    mongoose.connect(process.env.mongodb_connection_product)
     console.log("API running")
 })
