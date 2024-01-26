@@ -24,8 +24,13 @@ app.get("/", async (req, res) => {
 })
 
 app.get("/products", async (req, res) => {
-    const products = await Product.find()
-    return res.send(products)
+    try{
+        const products = await Product.find()
+        return res.send(products)
+    }catch(error){
+        console.error('Error list products:', error)
+        res.status(500).json({ error: 'Internal server error' })
+    }
 })
 
 //Save new product
