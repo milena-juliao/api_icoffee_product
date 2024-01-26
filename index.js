@@ -23,6 +23,10 @@ app.get("/", async (req, res) => {
     return res.json("hello world");
 })
 
+app.get("/teste", async (req, res) => {
+    return res.json("está tudo certo.");
+})
+
 app.get("/products", async (req, res) => {
     try{
         const products = await Product.find()
